@@ -61,7 +61,7 @@ module.exports = BsonConverter =
     try
       output = bson.serialize(Converter.parse input)
     catch e
-      atom.notifications.addError("**#{name}**", detail: e, dismissable: false)
+      return atom.notifications.addError("**#{name}**", detail: e, dismissable: false)
 
     editor.setText(output.toString())
 
@@ -90,7 +90,7 @@ module.exports = BsonConverter =
       buffer = Buffer.from(input, "utf8")
       output = bson.deserialize(buffer)
     catch e
-      atom.notifications.addError("**#{name}**", detail: e, dismissable: false)
+      return atom.notifications.addError("**#{name}**", detail: e, dismissable: false)
 
     editor.setText(Converter.stringify output, null, atom.config.get("#{name}.whiteSpace"))
 
