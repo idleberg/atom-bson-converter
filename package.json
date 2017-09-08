@@ -1,7 +1,7 @@
 {
   "name": "bson-converter",
   "description": "Converts BSON into JSON and vice versa",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "contributors": [
     {
