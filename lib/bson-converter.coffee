@@ -12,7 +12,7 @@ module.exports = BsonConverter =
       order: 0
     whiteSpace:
       title: "White Space"
-      description: "A String or Number object that's used to insert white space into the output JSON string for readability purposes"
+      description: "A String or Number object that's used to insert white space into the output string for readability purposes"
       type: "integer"
       default: 2
       minimum: 0

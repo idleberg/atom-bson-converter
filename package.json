@@ -14,7 +14,8 @@
     "bson",
     "cson",
     "json",
-    "conversion"
+    "conversion",
+    "mongodb"
   ],
   "main": "./lib/bson-converter",
   "activationCommands": {
