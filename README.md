@@ -6,7 +6,7 @@
 [![Travis](https://img.shields.io/travis/idleberg/atom-bson-converter.svg?style=flat-square)](https://travis-ci.org/idleberg/atom-bson-converter)
 [![David](https://img.shields.io/david/dev/idleberg/atom-bson-converter.svg?style=flat-square)](https://david-dm.org/idleberg/atom-bson-converter?type=dev)
 
-Converts [BSON](http://bsonspec.org/) into JSON and vice versa
+Converts [BSON](http://bsonspec.org/) into JSON (or CSON) and vice versa
 
 ## Installation
 
@@ -33,6 +33,15 @@ Clone the repository as `bson-converter`:
 ```
 $ git clone https://github.com/idleberg/atom-bson-converter bson-converter
 ```
+
+## Usage
+
+Once installed, two commands are exposed to the [command palette](http://flight-manual.atom.io/getting-started/sections/atom-basics/#_command_palette):
+
+* `BSON: Encode` – encodes JSON and CSON into BSON
+* `BSON: Decode` – decodes BSON into JSON or CSON
+
+You can tweak some of the defaults in the [package settings](http://flight-manual.atom.io/using-atom/sections/atom-packages/#package-settings).
 
 ## License
 
