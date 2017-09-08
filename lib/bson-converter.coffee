@@ -1,5 +1,15 @@
 module.exports = BsonConverter =
   config:
+    decodingTarget:
+      title: "Decoding Target"
+      description: "Specify the default target format when decoding BSON"
+      default: "JSON"
+      type: "string"
+      enum: [
+        "CSON",
+        "JSON"
+      ]
+      order: 0
     whiteSpace:
       title: "White Space"
       description: "A String or Number object that's used to insert white space into the output JSON string for readability purposes"
@@ -7,11 +17,13 @@ module.exports = BsonConverter =
       default: 2
       minimum: 0
       maximum: 4
+      order: 1
     autoSetSyntax:
       title: "Automatically Set Syntax"
-      description: "A String or Number object that's used to insert white space into the output JSON string for readability purposes"
+      description: "Upon successful conversion, automatically set syntax scope"
       type: "boolean"
       default: true
+      order: 2
   subscriptions: null
 
   activate: ->
@@ -21,8 +33,8 @@ module.exports = BsonConverter =
     @subscriptions = new CompositeDisposable
 
     # Register command that toggles this view
-    @subscriptions.add atom.commands.add "atom-workspace", "bson:encode": => @encode()
-    @subscriptions.add atom.commands.add "atom-workspace", "bson:decode": => @decode()
+    @subscriptions.add atom.commands.add "atom-workspace", "BSON:encode": => @encode()
+    @subscriptions.add atom.commands.add "atom-workspace", "BSON:decode": => @decode()
 
   deactivate: ->
     @subscriptions?.dispose()
@@ -39,9 +51,15 @@ module.exports = BsonConverter =
     bson = new BSON()
 
     input = editor.getText()
+    scope = editor.getGrammar().scopeName
+
+    if scope is "source.coffee"
+      Converter = require "cson"
+    else
+      Converter = JSON
 
     try
-      output = bson.serialize(JSON.parse input)
+      output = bson.serialize(Converter.parse input)
     catch e
       atom.notifications.addError("**#{name}**", detail: e, dismissable: false)
 
@@ -61,6 +79,12 @@ module.exports = BsonConverter =
     bson = new BSON()
 
     input = editor.getText()
+    decodingTarget = atom.config.get("#{name}.decodingTarget")
+
+    if decodingTarget is "CSON"
+      Converter = require "cson"
+    else
+      Converter = JSON
 
     try
       buffer = Buffer.from(input, "utf8")
@@ -68,7 +92,11 @@ module.exports = BsonConverter =
     catch e
       atom.notifications.addError("**#{name}**", detail: e, dismissable: false)
 
-    editor.setText(JSON.stringify output, null, atom.config.get("#{name}.whiteSpace"))
+    editor.setText(Converter.stringify output, null, atom.config.get("#{name}.whiteSpace"))
 
     if atom.config.get("#{name}.autoSetSyntax")
-      editor.setGrammar(atom.grammars.grammarForScopeName('source.json'))
+      if decodingTarget is "CSON"
+        editor.setGrammar(atom.grammars.grammarForScopeName('source.coffee'))
+      else
+        editor.setGrammar(atom.grammars.grammarForScopeName('source.json'))
+
