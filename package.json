@@ -1,6 +1,6 @@
 {
   "name": "bson-converter",
-  "description": "Converts BSON into JSON and vice versa",
+  "description": "Converts BSON into JSON (or CSON) and vice versa",
   "version": "0.1.0",
   "license": "MIT",
   "contributors": [
@@ -12,21 +12,23 @@
   "repository": "https://github.com/idleberg/atom-bson-converter",
   "keywords": [
     "bson",
+    "cson",
     "json",
     "conversion"
   ],
   "main": "./lib/bson-converter",
   "activationCommands": {
     "atom-text-editor": [
-      "bson:encode",
-      "bson:decode"
+      "BSON:encode",
+      "BSON:decode"
     ]
   },
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
-    "bson": "^1.0.4"
+    "bson": "^1.0.4",
+    "cson": "^4.1.0"
   },
   "devDependencies": {
     "coffeelint-stylish": "^0.1.2",
