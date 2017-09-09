@@ -41,7 +41,7 @@ Once installed, two commands are exposed to the [command palette](http://flight-
 * `BSON: Encode` – encodes JSON and CSON into BSON
 * `BSON: Decode` – decodes BSON into JSON or CSON
 
-You can tweak some of the defaults in the [package settings](http://flight-manual.atom.io/using-atom/sections/atom-packages/#package-settings).
+You can tweak the behavior by adjusting the many options available in the [package settings](http://flight-manual.atom.io/using-atom/sections/atom-packages/#package-settings).
 
 ## License
 
