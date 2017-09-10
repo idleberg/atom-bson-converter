@@ -1,0 +1,6 @@
+'.platform-darwin atom-text-editor, .platform-darwin .tree-view':
+  'ctrl-cmd-j ctrl-cmd-b': 'BSON:encode'
+  'ctrl-cmd-b ctrl-cmd-j': 'BSON:decode'
+'.platform-linux atom-text-editor, .platform-linux .tree-view, .platform-win32 atom-text-editor, .platform-win32 .tree-view':
+  'shift-cmd-j shift-cmd-b': 'BSON:encode'
+  'shift-cmd-b shift-cmd-j': 'BSON:decode'

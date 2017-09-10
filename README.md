@@ -43,6 +43,17 @@ Once installed, two commands are exposed to the [command palette](http://flight-
 
 You can tweak the behavior by adjusting the many options available in the [package settings](http://flight-manual.atom.io/using-atom/sections/atom-packages/#package-settings).
 
+### Keyboard Shortcuts
+
+*The following examples use the macOS keyboard shortcuts. On Linux or Windows use <kbd>Shift</kbd>+<kbd>Super</kbd> as modifier key*
+
+Memorizing the keyboard shortcuts for conversion is easy. Just think of the <kbd>B</kbd> key for BSON, the <kbd>J</kbd> key for JSON:
+
+Action                 | Mnemonic | Shortcut
+-----------------------|----------|-----------------------------------------------------------------------------------------
+BSON to JSON (or CSON) | “B to J” | <kbd>Ctrl</kbd>+<kbd>Cmd</kbd>+<kbd>A</kbd>, <kbd>Ctrl</kbd>+<kbd>Cmd</kbd>+<kbd>S</kbd>
+JSON (or JSON) to BSON | “J to B” | <kbd>Ctrl</kbd>+<kbd>Cmd</kbd>+<kbd>A</kbd>, <kbd>Ctrl</kbd>+<kbd>Cmd</kbd>+<kbd>T</kbd>
+
 ## License
 
 This work is licensed under the [The MIT License](LICENSE.md).
