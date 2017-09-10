@@ -51,8 +51,8 @@ Memorizing the keyboard shortcuts for conversion is easy. Just think of the <kbd
 
 Action                 | Mnemonic | Shortcut
 -----------------------|----------|-----------------------------------------------------------------------------------------
-BSON to JSON (or CSON) | “B to J” | <kbd>Ctrl</kbd>+<kbd>Cmd</kbd>+<kbd>A</kbd>, <kbd>Ctrl</kbd>+<kbd>Cmd</kbd>+<kbd>S</kbd>
-JSON (or JSON) to BSON | “J to B” | <kbd>Ctrl</kbd>+<kbd>Cmd</kbd>+<kbd>A</kbd>, <kbd>Ctrl</kbd>+<kbd>Cmd</kbd>+<kbd>T</kbd>
+BSON to JSON (or CSON) | “B to J” | <kbd>Ctrl</kbd>+<kbd>Cmd</kbd>+<kbd>B</kbd>, <kbd>Ctrl</kbd>+<kbd>Cmd</kbd>+<kbd>J</kbd>
+JSON (or JSON) to BSON | “J to B” | <kbd>Ctrl</kbd>+<kbd>Cmd</kbd>+<kbd>J</kbd>, <kbd>Ctrl</kbd>+<kbd>Cmd</kbd>+<kbd>B</kbd>
 
 ## License
 
