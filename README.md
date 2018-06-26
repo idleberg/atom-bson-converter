@@ -34,6 +34,12 @@ Clone the repository as `bson-converter`:
 $ git clone https://github.com/idleberg/atom-bson-converter bson-converter
 ```
 
+Install dependencies:
+
+```
+cd bson-converter && npm install
+```
+
 ## Usage
 
 Once installed, two commands are exposed to the [command palette](http://flight-manual.atom.io/getting-started/sections/atom-basics/#_command_palette):
