@@ -131,7 +131,6 @@ module.exports = BsonConverter =
       return atom.notifications.addWarning("**#{name}**: No active text editor", dismissable: false)
 
     BSON = require "bson"
-    bson = new BSON()
 
     input = editor.getText()
     scope = editor.getGrammar().scopeName
@@ -145,7 +144,7 @@ module.exports = BsonConverter =
     options = @encodingOptions
 
     try
-      output = bson.serialize(obj, options)
+      output = BSON.serialize(obj, options)
     catch e
       return atom.notifications.addError("**#{name}**", detail: e, dismissable: false)
 
@@ -169,7 +168,6 @@ module.exports = BsonConverter =
       return atom.notifications.addWarning("**#{name}**: No active text editor", dismissable: false)
 
     BSON = require "bson"
-    bson = new BSON()
 
     input = editor.getText()
     outputFormat = atom.config.get("#{name}.deserialization.outputFormat")
@@ -183,7 +181,7 @@ module.exports = BsonConverter =
 
     try
       buffer = Buffer.from(input, "utf8")
-      output = bson.deserialize(buffer, options)
+      output = BSON.deserialize(buffer, options)
     catch e
       return atom.notifications.addError("**#{name}**", detail: e, dismissable: false)
 

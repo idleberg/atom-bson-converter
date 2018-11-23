@@ -28,7 +28,7 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
-    "bson": "^3.0.2",
+    "bson": "^4.0.0",
     "cson": "^5.1.0"
   },
   "devDependencies": {
@@ -36,8 +36,8 @@
     "gulp": "^4.0.0",
     "gulp-coffeelint": "^0.6.0",
     "gulp-debug": "^4.0.0",
-    "gulp-jsonlint": "^1.2.1",
-    "husky": "^0.14.3"
+    "gulp-jsonlint": "^1.2.2",
+    "husky": "^1.2.0"
   },
   "scripts": {
     "test": "gulp lint"
